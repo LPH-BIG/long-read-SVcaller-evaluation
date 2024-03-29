@@ -110,22 +110,45 @@ Evaluation of the performances of structural variant callers on long reads from 
 
 ```for i in ` cat pb/f_lst `;do python ../../software/pbh5tools/bin/bash5tools.py --minLength 1000 --readType subreads   --minReadScore 0.8 --outType fasta  --outFilePrefix ./fasta/"$i"   pb/"$i"*.bas.h5;done ```
 
+#### For raw data (fastq type) convert to fasta type and filter with --min_length  and  --min_mean_q parameters:
+```for i in ` cat pb/fq_lst `;do filtlong --min_length 1000 --min_mean_q 7 SRR/$i.fastq.gz |gzip > filfq/$i.fastq.gz```
+
+#### For convert fastq to fasta format:
+
+```for i in `cat 3idsra.ids`;do  zcat  filfq/"$i".fq.gz|  sed -n '1~4s/^@/>/p;2~4p'  >fasta/$i.fasta;done```
+
 #### For samples using seqtk tool:
+
+  #### **Installation and usage:**
+  
+  ```git clone https://github.com/lh3/seqtk.git; cd seqtk; make```
 
 ```seq -s 11 -f 0.4268981  pb.fa.1k  > 20x.fa```
 
 ## 2. Alignment
 
-The reference genome uses GRCh37/hg19. Each set of data was aligned to the reference genome using minimap2, pbmm2 and ngmlr methods respectively. samtools was used to sort mapping results to the BAM format.
+The reference genome uses GRCh37/hg19. Each set of data was aligned to the reference genome using minimap2 and pbmm2  methods respectively. samtools was used to sort mapping results to the BAM format.
 
   - [minimap2](https://github.com/lh3/minimap2) (2.20-r1061)
+ 
+      #### **Installation:**
+  
+     ```curl -L https://github.com/lh3/minimap2/releases/download/v2.28/minimap2-2.28_x64-linux.tar.bz2 | tar -jxvf -```
 
-  - [ngmlr](https://github.com/philres/ngmlr) (0.2.7)
 
   - [pbmm2](https://github.com/PacificBiosciences/pbmm2) (1.7.0)
 
+     #### **Installation:**
+  
+     ```conda install -c bioconda pbmm2```
+  
+
   - [samtools](https://github.com/samtools/samtools) (1.9)
   
+    #### **Installation:**
+
+    ```./configure;make;make install```
+
   
 
 #### For sample NA12878 20X PacBio CLR dataset :
@@ -149,19 +172,51 @@ The reference genome uses GRCh37/hg19. Each set of data was aligned to the refer
 
   - [PBHoney](http://sourceforge.net/projects/pb-jelly/) (2.20-r1061)
 
+     #### **Installation:**
+   
+     ```source <path to>/setup.sh```
+
   - [pbsv](https://github.com/PacificBiosciences/pbsv) (version 2.4.0)
+
+     #### **Installation:**
+   
+     ```conda install -c bioconda pbsv```
 
   - [NanoSV](https://github.com/mroosmalen/nanosv) (version 1.2.4)
 
+     #### **Installation:**
+   
+     ```source <path to>/setup.sh```
+
   - [NanoVar](https://github.com/cytham/nanovar) (version 1.4.1)
+
+     #### **Installation:**
+   
+     ```conda create -n myenv -c bioconda python=3.11 samtools bedtools minimap2 -y;conda activate myenv;pip install nanovar```
 
   - [Sniffles](https://github.com/fritzsedlazeck/Sniffles)  (version 1.0.12)
 
+     #### **Installation:**
+   
+     ```conda install sniffles=2.0```
+
   - [SVIM](https://github.com/eldariont/svim)  (version 1.4.2)
+
+     #### **Installation:**
+   
+     ```conda create -n svim_env --channel bioconda svim```
 
   - [cuteSV](https://github.com/tjiangHIT/cuteSV)  (version 1.0.13)
 
+      #### **Installation:**
+   
+      ```conda install -c bioconda cutesv```
+
   - [Delly](https://github.com/dellytools/delly)  (version 0.8.5)
+
+      #### **Installation:**
+   
+      ```git clone --recursive https://github.com/dellytools/delly.git;cd delly/;make all```
   
   
 #### pbsv
@@ -200,6 +255,10 @@ The reference genome uses GRCh37/hg19. Each set of data was aligned to the refer
 #### SVIM
 
  ```svim alignment   --min_sv_size 50 ./   $inputdir/minimap2/NA12878.bam  $inputdir/human.fa ```
+
+ ### Interpreters
+ - Perl (v5.26.2)
+ - Python (v3.6.7)
 
 
 

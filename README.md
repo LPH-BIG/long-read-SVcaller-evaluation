@@ -125,6 +125,16 @@ Evaluation of the performances of structural variant callers on long reads from 
 
 ```seq -s 11 -f 0.4268981  pb.fa.1k  > 20x.fa```
 
+**（3）The generation of simulated long reads.**
+
+- [Sim-it](https://github.com/ndierckx/Sim-it/) (version 1.3.3)
+
+     #### **Installation:**
+
+    ```cpan Parallel::ForkManager```
+
+  ```perl Sim-it1.3.3.pl -c config_Sim-it.txt -o output/directory/path```
+
 ## 2. Alignment
 
 The reference genome uses GRCh37/hg19. Each set of data was aligned to the reference genome using minimap2 and pbmm2  methods respectively. samtools was used to sort mapping results to the BAM format.

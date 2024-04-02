@@ -1,0 +1,46 @@
+Project:
+-----------------------------
+Project name             = ONT
+Reference sequence       = /xtdisk/liufan_group/yuanna/software/Sim-it-master/hg38.fa
+Replace ambiguous nts(N) = 
+Max threads              = 16
+
+
+Structural variation:
+-----------------------------
+VCF input                =  /xtdisk/liufan_group/yuanna/software/Sim-it-master/example_nstd152.vcf
+Foreign sequences        =
+
+Deletions                = 10031
+Length (bp)              = 30-150000
+
+Insertions               = 10469
+Length (bp)              = 30-100000
+
+Tandem duplications      = 857
+Length (bp)              = 50-10000
+Copies                   = 1-20
+
+Inversions               = 170
+Length (bp)              = 150-1300000
+
+Complex substitutions    = 3073
+Length (bp)              = 30-100000
+
+Inverted duplications    = 0
+Length (bp)              = 150-350000
+
+Heterozygosity           = 0%
+
+
+Long Read simulation:
+-----------------------------
+Sequencing depth         = 50
+Median length            = 25000
+Length range             = 500-150000
+Accuracy                 = 88%
+Error profile            = error_profile_ONT.txt
+
+
+
+

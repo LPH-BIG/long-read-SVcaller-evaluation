@@ -28,7 +28,7 @@ n=$[$n_del+$n_dup];
 echo -e "$i\tNanoVar\t$n" >> ../bench/num_stat
 perl -lane 'chomp;print $_,"\tNanoVar"' dup.col3.merge > ../bench/NanoVar.dup.col4
 perl -lane 'chomp;print $_,"\tNanoVar"' del.col3.merge > ../bench/NanoVar.del.col4
-cd ../Sniffles
+cd ../Sniffles2
 perl /xtdisk/liufan_group/yuanna/cnv/NA12878/cnv_bench/merge.pl  dup.col3 dup.col3.merge
 perl /xtdisk/liufan_group/yuanna/cnv/NA12878/cnv_bench/merge.pl  del.col3 del.col3.merge
 n_del=`wc del.col3.merge | perl -lane 'print $F[0]'`

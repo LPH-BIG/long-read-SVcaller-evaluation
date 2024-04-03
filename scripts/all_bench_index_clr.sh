@@ -34,7 +34,7 @@ perl /xtdisk/liufan_group/yuanna/cnv/NA12878/cnv_bench/merge.pl  del.col3 del.co
 n_del=`wc del.col3.merge | perl -lane 'print $F[0]'`
 n_dup=`wc dup.col3.merge | perl -lane 'print $F[0]'`
 n=$[$n_del+$n_dup];
-echo -e "$i\tSniffles\t$n" >> ../bench/num_stat
+echo -e "$i\tSniffles2\t$n" >> ../bench/num_stat
 perl -lane 'chomp;print $_,"\tSniffles"' dup.col3.merge > ../bench/Sniffles.dup.col4
 perl -lane 'chomp;print $_,"\tSniffles"' del.col3.merge > ../bench/Sniffles.del.col4
 cd ../Delly

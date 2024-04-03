@@ -1,0 +1,6 @@
+name: sniffles
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+prefix: /xtdisk/liufan_group/yuanna/software/sniffles

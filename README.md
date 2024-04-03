@@ -1,6 +1,6 @@
 # EValuation of long-read SV Callers 
 
-Evaluation of the performances of structural variant callers on long reads from PacBio SMRT sequencing and Oxford Nanopore Technologies. This will include tests on public samples with several different type datasets from raw sequencing reads.
+Evaluation of the performance of structural variant callers on long reads generated from PacBio SMRT sequencing and Oxford Nanopore Technologies is crucial in genomics research. This evaluation entails conducting tests on publicly available samples with diverse types of datasets, encompassing raw sequencing reads and simulated long read datasets from various platforms. 
 
 ## 1. Download the raw sequencing data 
 

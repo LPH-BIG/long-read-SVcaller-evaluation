@@ -324,6 +324,6 @@ git clone --recursive https://github.com/dellytools/delly.git;cd delly/;make all
 ## Interpreters
 
 - Perl (v5.26.2)
-- Python (v3.6.7)
+- Python (version - please refer to the YAML files in the Conda environments directory)
 
 Note: scripts/addCoulmns.py used Python 2.7.15.

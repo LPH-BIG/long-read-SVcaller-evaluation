@@ -327,3 +327,8 @@ git clone --recursive https://github.com/dellytools/delly.git;cd delly/;make all
 - Python (version - please refer to the YAML files in the Conda environments directory)
 
 Note: scripts/addCoulmns.py used Python 2.7.15.
+
+
+## Citation
+
+Na Yuan, Peilin Jia, Comprehensive assessment of long-read sequencing platforms and calling algorithms for detection of copy number variation, Briefings in Bioinformatics, Volume 25, Issue 5, September 2024, bbae441, https://doi.org/10.1093/bib/bbae441
